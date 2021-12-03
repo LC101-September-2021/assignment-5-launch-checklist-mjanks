@@ -68,7 +68,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
   if (readyForLaunch) {
     launchStatus.innerHTML = 'Shuttle is ready for launch';
-    launchStatus.style.color = 'Green';
+    launchStatus.style.color = 'rgb(65, 159, 106)';
     launchStatus.style.visibility = 'visible';
     fuelStatus.innerHTML = 'Fuel level high enough for launch';
     cargoStatus.innerHTML = 'Cargo mass low enough for launch';
@@ -85,7 +85,8 @@ async function myFetch() {
 }
 
 function pickPlanet(planets) {
-  return Math.floor(Math.random() * planets.length);
+  let random = Math.random() * planets.length;
+  return Math.floor(random);
 }
 
 module.exports.addDestinationInfo = addDestinationInfo;
