@@ -6,18 +6,6 @@ window.addEventListener('load', function () {
   let cargoMass = document.querySelector('input[name=cargoMass]');
   let submitButton = document.getElementById('formSubmit');
 
-  submitButton.addEventListener('click', e => {
-    e.preventDefault();
-    formSubmission(
-      document,
-      listedPlanets,
-      pilotName.value,
-      copilotName.value,
-      fuelLevel.value,
-      cargoMass.value
-    );
-  });
-
   // Set listedPlanetsResponse equal to the value returned
   // by calling myFetch()
   let listedPlanetsResponse = myFetch();
@@ -44,4 +32,16 @@ window.addEventListener('load', function () {
         selectedPlanet.image
       );
     });
+
+  submitButton.addEventListener('click', e => {
+    e.preventDefault();
+    formSubmission(
+      document,
+      listedPlanets,
+      pilotName.value,
+      copilotName.value,
+      fuelLevel.value,
+      cargoMass.value
+    );
+  });
 });
