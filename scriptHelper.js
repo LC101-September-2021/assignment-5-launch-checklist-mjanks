@@ -10,7 +10,7 @@ function addDestinationInfo(
   imageUrl
 ) {
   let missionTarget = document.getElementById('missionTarget');
-  missionTarget.innerHTML += `<h2>Mission Destination</h2>
+  missionTarget.innerHTML = `<h2>Mission Destination</h2>
     <ol>
         <li>Name: ${name}</li>
         <li>Diameter: ${diameter}</li>
