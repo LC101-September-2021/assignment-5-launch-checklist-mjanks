@@ -1,5 +1,6 @@
 window.addEventListener('load', function () {
   let listedPlanets;
+  let faultyItems = document.getElementById('faultyItems');
   let pilotName = document.querySelector('input[name=pilotName]');
   let copilotName = document.querySelector('input[name=copilotName]');
   let fuelLevel = document.querySelector('input[name=fuelLevel]');
@@ -32,6 +33,8 @@ window.addEventListener('load', function () {
         selectedPlanet.image
       );
     });
+
+  faultyItems.style.visibility = 'hidden';
 
   submitButton.addEventListener('click', e => {
     e.preventDefault();
