@@ -38,16 +38,30 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
   let fuelStatus = document.getElementById('fuelStatus');
   let cargoStatus = document.getElementById('cargoStatus');
 
+  // check for any empty fields
+  if (
+    validateInput(pilot) === 'Empty' ||
+    validateInput(copilot) === 'Empty' ||
+    validateInput(fuelLevel) === 'Empty' ||
+    validateInput(cargoLevel) === 'Empty'
+  ) {
+    launchStatus.innerHTML = 'Awaiting Information Before Launch';
+    launchStatus.style.color = 'Black';
+    faultyItems.style.visibility = 'hidden';
+    return window.alert('All fields are required!');
+  }
+
+  // check for valid information in each field
   if (
     validateInput(pilot) !== 'Not a Number' ||
     validateInput(copilot) !== 'Not a Number' ||
     validateInput(fuelLevel) !== 'Is a Number' ||
     validateInput(cargoLevel) !== 'Is a Number'
   ) {
-    launchStatus.innerHTML = 'Shuttle Not Ready for Launch';
-    launchStatus.style.color = 'rgb(199, 37, 78)';
+    launchStatus.innerHTML = 'Awaiting Information Before Launch';
+    launchStatus.style.color = 'Black';
     faultyItems.style.visibility = 'hidden';
-    return window.alert('All fields are required!');
+    return window.alert('Make sure to enter valid information for each field!');
   }
 
   // Fuel bad, cargo good
